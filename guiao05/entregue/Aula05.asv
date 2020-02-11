@@ -1,0 +1,38 @@
+%% ex 1)
+clc
+randomString = RandomString(3,20);
+
+%% ex 3)
+clc
+N = 100;
+carga = 0.8;
+min = 5;
+MAXIMO = 15;
+SIZE = floor((1-carga + 1)*N - 1);
+hashtable = zeros(SIZE,1);
+for i=0:SIZE
+    subplot(1,2,1)
+    bar(hashtable)
+    drawnow
+    subplot(1,2,2)
+    histogram(hashtable)
+    drawnow
+    
+    rs = RandomString(min,MAXIMO);
+    %hash = string2hash(rs);
+    %index = adjustToSize(hash,SIZE);
+    index = randi(SIZE-1);
+    hashtable(index,1) = hashtable(index,1) + 1;
+end
+hashtable
+                % ex 4)
+
+
+
+
+
+
+
+
+
+
